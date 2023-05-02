@@ -1,0 +1,1 @@
+// think of these like my html routes - routing me to different locations in my app
