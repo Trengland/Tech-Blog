@@ -26,14 +26,14 @@ Code debugging through ChatGPT
 
 
 ## Dependencies
-  bcrypt: "^5.1.0",/
-  connect-session-sequelize: ^7.1.6 /
-  dotenv: ^16.0.3 /
-  express: ^4.18.2 /
-  express-session: ^1.17.3 /
-  handlebars: ^4.7.7 /
-  mysql2: ^3.2.4 /
-  sequelize: ^6.31.1
+ * bcrypt: "^5.1.0",/
+ * connect-session-sequelize: ^7.1.6 /
+ * dotenv: ^16.0.3 /
+ * express: ^4.18.2 /
+ * express-session: ^1.17.3 /
+ * handlebars: ^4.7.7 /
+ * mysql2: ^3.2.4 /
+ * sequelize: ^6.31.1
 
 
 
