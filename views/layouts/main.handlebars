@@ -6,9 +6,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech Blog</title>
 </head>
 <body>
-    
+      <nav class="navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="/">My Blog</a>
+      <ul class="navbar-nav">
+        {{#if user}}
+        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        {{else}}
+        <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    {{{body}}}
+  </div>
 </body>
 </html>
