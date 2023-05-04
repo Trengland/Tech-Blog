@@ -1,4 +1,5 @@
 //the file to start with
+
 //establish conenction to mySQL db using sequelize
 const Sequelize = require('sequelize')
 require('dotenv').config()
@@ -12,4 +13,4 @@ const sequelize = process.env.JAWSDB_URL
         port: 3306 //default mysql port
     })
 
-    module.exports = sequelize
+module.exports = sequelize
