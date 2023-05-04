@@ -1,11 +1,7 @@
-{{!-- Extend the main layout --}}
-{{#extend "layouts/main"}}
-
 {{!-- Set the page title --}}
-{{#content "title"}}{{post.title}}{{/content}}
+  {{post.title}}
 
 {{!-- Define the content block --}}
-{{#content "content"}}
 
 <div class="post">
   <h2>{{post.title}}</h2>
@@ -38,4 +34,3 @@
 
 </div>
 
-{{/content}}
