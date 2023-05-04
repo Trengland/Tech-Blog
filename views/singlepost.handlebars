@@ -1,0 +1,41 @@
+{{!-- Extend the main layout --}}
+{{#extend "layouts/main"}}
+
+{{!-- Set the page title --}}
+{{#content "title"}}{{post.title}}{{/content}}
+
+{{!-- Define the content block --}}
+{{#content "content"}}
+
+<div class="post">
+  <h2>{{post.title}}</h2>
+  <p>By {{post.author.name}} on {{formatDate post.date}}</p>
+  <div class="post-content">
+    {{{post.content}}}
+  </div>
+
+  <hr>
+
+  <h3>Comments ({{comments.length}})</h3>
+
+  {{!-- Display the comments --}}
+  {{#each comments}}
+  <div class="comment">
+    <p class="comment-author">{{this.author}}:</p>
+    <p class="comment-content">{{this.content}}</p>
+  </div>
+  {{/each}}
+
+  {{!-- Display a form to add a new comment --}}
+  <form method="post" action="/api/comments">
+    <input type="hidden" name="postId" value="{{post._id}}">
+    <div class="form-group">
+      <label for="commentContent">Leave a comment</label>
+      <textarea class="form-control" id="commentContent" name="content" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+{{/content}}

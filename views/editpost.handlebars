@@ -1,0 +1,31 @@
+{{!-- // This is a form that allows users to edit an existing blog post. --}}
+{{> main}}
+
+{{#contentFor "title"}}
+  Edit Post
+{{/contentFor}}
+
+{{#contentFor "head"}}
+  <link rel="stylesheet" href="/css/edit.css">
+{{/contentFor}}
+
+{{#contentFor "body"}}
+  <div class="container">
+    <h2 class="text-center mb-4">Edit Post</h2>
+    <form action="/posts/{{post._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{post.title}}" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+      </div>
+      <div class="form-group">
+        <label for="body">Body</label>
+        <textarea class="form-control" id="body" name="body" rows="10" required>{{post.body}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+  </div>
+{{/contentFor}}

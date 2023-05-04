@@ -1,0 +1,24 @@
+<!-- views/allposts.handlebars -->
+
+{{#extend "main"}}
+
+  {{#content "content"}}
+    <div class="container">
+      <h1>All Posts</h1>
+      {{#if posts}}
+        <ul class="list-group">
+          {{#each posts}}
+            <li class="list-group-item">
+              <h4>{{this.title}}</h4>
+              <p>{{this.body}}</p>
+              <a href="/post/{{this._id}}">View</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>No posts found.</p>
+      {{/if}}
+    </div>
+  {{/content}}
+
+{{/extend}}
