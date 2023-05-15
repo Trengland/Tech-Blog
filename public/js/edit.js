@@ -1,34 +1,31 @@
-$(document).ready(function() {
-    // Get references to elements on the page
-    var $postTitle = $("#post-title");
-    var $postBody = $("#post-body");
-    var $submitBtn = $("#submit");
+const postId = document.querySelector('input[name="id"]').value;
+
+  const editFormHandler = async (event) => {
+    event.preventDefault();
   
-    // Add an event listener to the form to prevent default submission
-    $(document).on("submit", "#edit-form", handleFormSubmit);
+    const title = document.querySelector('input[name="title"]').value;
+    const content = document.querySelector('textarea[name="body"]').value;
   
-    // A function to handle form submission and update the post
-    function handleFormSubmit(event) {
-      event.preventDefault();
-  
-      // Get the post ID from the URL parameter
-      var url = window.location.href;
-      var postId = url.substring(url.lastIndexOf("/") + 1);
-  
-      // Create a newPost object with the updated information
-      var updatedPost = {
-        title: $postTitle.val().trim(),
-        body: $postBody.val().trim()
-      };
-  
-      // Send an AJAX PUT request to update the post
-      $.ajax({
-        method: "PUT",
-        url: "/api/posts/" + postId,
-        data: updatedPost
-      }).then(function() {
-        window.location.href = "/dashboard";
-      });
-    }
-  });
-  
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        title,
+        content
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+      document.location.replace('/dashboard');
+  }
+  const deleteFormHandler = async () => {
+    await fetch(`/api/posts/${postId}`, {
+      method: 'DELETE'
+    });
+    document.location.replace('/dashboard');
+  }
+
+  //event listeners
+  document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+  document.querySelector('#delete-post').addEventListener('click', deleteFormHandler);

@@ -1,30 +1,9 @@
 {{!-- includes a table displaying all of the blog posts in the system, with options to edit or delete each post.  --}}
-{{#> main}}
-  <h1>All Posts Dashboard</h1>
-  {{#if posts}}
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Date</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each posts}}
-          <tr>
-            <td><a href="/post/{{id}}">{{title}}</a></td>
-            <td>{{author}}</td>
-            <td>{{formatDate createdAt}}</td>
-            <td><a href="/post/edit/{{id}}">Edit</a></td>
-            <td><form action="/post/{{id}}?_method=DELETE" method="POST"><button type="submit">Delete</button></form></td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{else}}
-    <p>No posts yet.</p>
-  {{/if}}
-{{/main}}
+<div class="posts list-group">
+{{#each posts}}
+<a class="list-item" href="/dashbaord/edit/{{id}}">
+<span>{{title}}</span>
+<span>{{createdAt}}</span>
+</a>
+{{/each}}
+</div>

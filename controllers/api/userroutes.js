@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 // Log in an existing user
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({ where: { email: req.body.email } });
+    const user = await User.findOne({ where: { username: req.body.username } });
     if (!user) {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;

@@ -2,15 +2,23 @@
     <div class="container">
       <h1>All Posts</h1>
       {{#if posts}}
-        <ul class="list-group">
+        
           {{#each posts}}
-            <li class="list-group-item">
-              <h4>{{this.title}}</h4>
-              <p>{{this.body}}</p>
-              <a href="/post/{{this._id}}">View</a>
-            </li>
+          <article class="card">
+            <div>
+            <h2>
+              <a href="/post/{{id}}">{{title}}</a>
+            </h2>
+            <div>
+              Posted By: {{User.username}} on {{createdAt}}
+            </div>
+            </div>
+            <div class="card-body">
+              {{body}}
+            </div>
+          </article>
           {{/each}}
-        </ul>
+      
       {{else}}
         <p>No posts found.</p>
       {{/if}}
