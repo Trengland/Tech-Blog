@@ -7,7 +7,7 @@ const exphbs = require('express-handlebars')
 const helpers = require('./utils/helpers')
 // instantiate our express app
 const app = express()
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3306
 //bring in our connection
 const sequelize = require('./config/connection')
 
