@@ -23,14 +23,18 @@ const sess = {
   })
 };
 
-app.use(session(sess));
+// Create an instance of exphbs with the helpers
 const hbs = exphbs.create({ helpers });
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sess));
 
+// Custom middleware to set the MIME type for CSS files
 app.use((req, res, next) => {
   if (req.url.endsWith('.css')) {
     res.setHeader('Content-Type', 'text/css');
@@ -40,7 +44,9 @@ app.use((req, res, next) => {
 
 app.use(require('./controllers/'));
 
-app.listen(PORT, () => {
-  console.log(`App Listening on PORT! ${PORT}`);
-  sequelize.sync({ force: false });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`App Listening on PORT! ${PORT}`);
+  });
 });
+
