@@ -1,0 +1,214 @@
+/* Container styles */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+  }
+
+
+h3 {
+    margin-bottom: 10px;
+  }
+
+
+h4 {
+  text-align: center;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card div {
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.card-header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.card-body {
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Link styles */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* public/css/main.css */
+
+p {
+    margin-bottom: 5px;
+  }
+  
+.post-content {
+    margin-bottom: 15px;
+  }
+
+.posts {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post {
+    margin-bottom: 20px;
+  }
+
+/* List item styles */
+.list-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.list-item:hover {
+  background-color: #f2f2f2;
+}
+
+.list-item span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.list-item span:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list-item span:last-child {
+  color: #888;
+}
+
+
+.comment {
+    margin-bottom: 10px;
+  }
+  
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+.comment-content {
+    margin-left: 10px;
+  }
+
+
+/* form styles */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display:block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+  background-color: #0056b3;
+}
