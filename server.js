@@ -29,18 +29,13 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session(sess));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Custom middleware to set the MIME type for CSS files
-app.use((req, res, next) => {
-  if (req.url.endsWith('.css')) {
-    res.setHeader('Content-Type', 'text/css');
-  }
-  next();
-});
 
 app.use(require('./controllers/'));
 
@@ -49,4 +44,3 @@ sequelize.sync({ force: false }).then(() => {
     console.log(`App Listening on PORT! ${PORT}`);
   });
 });
-

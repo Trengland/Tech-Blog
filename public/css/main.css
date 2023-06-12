@@ -1,3 +1,7 @@
+/* Link to css sheet: */
+/* http://localhost:3000/css/main.css */
+
+
 /* Container styles */
 .container {
   max-width: 700px;
@@ -212,3 +216,12 @@ button[type="submit"]:hover {
 .btn-danger:hover {
   background-color: #0056b3;
 }
+
+.nav {
+  color: red;
+}
+
+.nav-item {
+  background-color: #007bff;
+}
+
