@@ -17,6 +17,26 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Blogpost.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+      res.json(postData);
+    }
+    catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+
 // UPDATE a post
 router.put('/:id', async (req, res) => {
   try {

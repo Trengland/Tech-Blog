@@ -1,11 +1,11 @@
 // think of these like my html routes - routing me to different locations in my app
 const router = require('express').Router();
 const { Blogpost, Comment, User } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 
 // GET all posts for the dashboard
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const postData = await Blogpost.findAll({
       where: {
@@ -34,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
 
 
 // GET a single post for the dashboard
-router.get('/edit/:id', withAuth, async (req, res) => {
+router.get('/edit/:id', async (req, res) => {
   try {
     const postData = await Blogpost.findByPk(req.params.id, {
       include: [
