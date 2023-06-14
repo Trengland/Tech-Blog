@@ -8,9 +8,9 @@ const { Blogpost, Comment, User } = require('../models');
 router.get('/', async (req, res) => {
   try {
     const postData = await Blogpost.findAll({
-      where: {
-        user_id: req.session.userId,
-      },
+      // where: {
+      //   user_id: req.session.userId,
+      // },
       include: [
         {
           model: User,
@@ -30,6 +30,14 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+
+router.get('/new', (req, res) => {
+  res.render('newpost', {
+    loggedIn: true,
+    layout: 'dashboard',
+  });
 });
 
 

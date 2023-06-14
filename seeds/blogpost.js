@@ -3,18 +3,15 @@ const { Blogpost } = require('../models');
 const blogpostData = [
   {
     title: 'My First Blog Post',
-    content: 'This is the content of my first blog post.',
-    user_id: 1
+    content: 'This is the content of my first blog post.'
   },
   {
     title: 'My Second Blog Post',
-    content: 'This is the content of my second blog post.',
-    user_id: 2
+    content: 'This is the content of my second blog post.'
   },
   {
     title: 'My Third Blog Post',
-    content: 'This is the content of my third blog post.',
-    user_id: 3
+    content: 'This is the content of my third blog post.'
   }
 ];
 

@@ -1,5 +1,3 @@
-//the file to start with
-
 //establish conenction to mySQL db using sequelize
 const Sequelize = require('sequelize')
 require('dotenv').config()

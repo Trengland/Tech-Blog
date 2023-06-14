@@ -17,6 +17,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// GET all posts
 router.get('/', async (req, res) => {
   try {
     const postData = await Blogpost.findAll({
@@ -63,6 +65,7 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // DELETE a post
 router.delete('/:id', async (req, res) => {
