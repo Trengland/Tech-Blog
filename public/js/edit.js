@@ -5,8 +5,8 @@ const postId = document.querySelector('input[name="id"]').value;
   
     const title = document.querySelector('input[name="title"]').value;
     const content = document.querySelector('textarea[name="body"]').value;
-  
-    const response = await fetch(`/api/posts/${postId}`, {
+  console.log(title, content)
+    const response = await fetch(`/api/blogposts/${postId}`, {
       method: 'PUT',
       body: JSON.stringify({
         title,

@@ -1,9 +1,9 @@
 const moment = require('moment');
 
 module.exports = {
-  formatDate: function(date, format) {
-    return moment(date).utc().format(format);
-  },
+  // formatDate: function(date, format) {
+  //   return moment(date).utc().format(format);
+  // },
   truncate: function(str, len) {
     if (str.length > len && str.length > 0) {
       let new_str = str + ' ';
@@ -29,12 +29,12 @@ module.exports = {
       return '';
     }
   },
-  select: function(selected, options) {
-    return options
-      .fn(this)
-      .replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"')
-      .replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&');
-  },
+  // select: function(selected, options) {
+  //   return options
+  //     .fn(this)
+  //     .replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"')
+  //     .replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&');
+  // },
   deleteIcon: function(blogUser, loggedUser, blogId, floating = true) {
     if (blogUser._id.toString() == loggedUser._id.toString()) {
       if (floating) {
@@ -48,10 +48,10 @@ module.exports = {
       return '';
     }
   },
-  select: function(selected, options) {
-    return options
-      .fn(this)
-      .replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"')
-      .replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&');
-  }
+  // select: function(selected, options) {
+  //   return options
+  //     .fn(this)
+  //     .replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"')
+  //     .replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&');
+  // }
 }
